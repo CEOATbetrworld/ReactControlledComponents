@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+    <meta charset='utf-8'>
+    <title>Awesome Upvote Downvote posts app
+    </title>
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+    <link href='css/style.css' rel='stylesheet'>
+  </head>
+  
+<body>
+  <div id='root'></div>
+  <!-- <script type="text/babel" src="script.js"></script> -->
+  <!-- script written in HTML because Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, https. so in order to run in locally using script in html--> 
+  <script type="text/babel">
+  	function AppHead(props) {
+  return (
+    <div>
+     <h1>{props.title}</h1>
+     <h3>{props.des}</h3>
+    </div>
+  );
+}
+function VehicleHead(props) {
+  return (
+    <div>
+      <h2>{props.type}</h2>
+    </div>
+  );
+}
+
+function VehicleRow(props) {
+  return (
+    <div>
+      <tr>
+        <th>Year</th>
+        <th>Model</th>
+        <th>Price</th>
+        <th>Buy</th>
+      </tr>
+      <tr>
+        <td>{props.year}</td>
+        <td>{props.model}</td>
+        <td>{props.price}</td>
+        <td>
+          <button type="button">Buy</button>
+        </td>
+      </tr>
+      <br/>
+    </div>
+  );
+}
+
+function VehicleTable() {
+  return (
+    <div>
+      <table id="customers">
+        <VehicleHead type="Cars" />
+        <VehicleRow year="2018" model="C220" price="120000$" />
+        <VehicleRow year="2018" model="SLS" price="120000$" />
+        <VehicleRow year="2018" model="Mustang" price="120000$" />
+        <VehicleHead type="Trucks" />
+        <VehicleRow year="2018" model="C220" price="120000$" />
+        <VehicleRow year="2018" model="C220" price="120000$" />
+        <VehicleHead type="Convertibles" />
+        <VehicleRow year="2018" model="C220" price="120000$" />
+        <VehicleRow year="2018" model="C220" price="120000$" />
+        <VehicleRow year="2018" model="C220" price="120000$" />
+        <VehicleRow year="2018" model="C220" price="120000$" />
+        <VehicleRow year="2018" model="C220" price="120000$" />
+      </table>
+    </div>
+  );
+}
+
+ReactDOM.render(
+    <div>
+    <AppHead title ="Buy Vehicles for the future" des="All the vehicles are fully autonomous and are ready for future."/>
+    <VehicleTable/>
+    </div>, document.getElementById("root"));
+
+  </script>
+  </body>
+ 
